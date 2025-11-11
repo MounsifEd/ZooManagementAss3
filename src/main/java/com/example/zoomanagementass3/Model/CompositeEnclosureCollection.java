@@ -1,4 +1,4 @@
 package com.example.zoomanagementass3.Model;
 
-public class CompositeAnimalCollection {
+public class CompositeEnclosureCollection {
 }
