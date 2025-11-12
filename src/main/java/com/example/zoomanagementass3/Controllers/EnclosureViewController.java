@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class EnclosureViewController {
+
     @FXML
     private Label enclosureLabel;
 
@@ -36,44 +37,49 @@ public class EnclosureViewController {
     private Enclosure enclosure;
 
     /**
-     * Injects the selected enclosure into this view. Call this right after loading
-     * the FXML
-     * and before showing the stage.
+     * Inject the selected enclosure into this controller
      */
-    void setEnclosure(Enclosure enclosure) {
+    public void setEnclosure(Enclosure enclosure) {
         this.enclosure = enclosure;
-        if (enclosureLabel != null && enclosure != null) {
+
+        if (enclosureLabel != null) {
             enclosureLabel.setText(enclosure.getName() + " Enclosure");
         }
-        // When Enclosure exposes an ObservableList<Animal>, bind it here:
-        // if (enclosure != null && animalListView != null) {
-        // animalListView.setItems(enclosure.getAnimals());
-        // }
-    }
 
+        if (animalListView != null) {
+            // SHOW the animals inside this enclosure
+            animalListView.setItems(enclosure.getAnimals());
+        }
+    }
+    /**
+     * Opens Animal Add Window AND gives it this enclosure
+     */
     @FXML
-    protected void onEnclosureAddButtonClick(ActionEvent pEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("animal-view.fxml"));
-        Parent view = fxmlLoader.load();
-        Scene nextScene = new Scene(view, 500, 500);
-        Stage nextStage = new Stage();
-        nextStage.setScene(nextScene);
-        nextStage.setTitle("Add Animal");
-        nextStage.initModality(Modality.WINDOW_MODAL);
-        nextStage.initOwner(((Node) pEvent.getSource()).getScene().getWindow());
-        nextStage.showAndWait();
+    protected void onEnclosureAddButtonClick(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(ZooApplication.class.getResource("animal-view.fxml"));
+        Parent view = loader.load();
+
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(view));
+        stage.setTitle("Add Animal");
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initOwner(((Node) event.getSource()).getScene().getWindow());
+        stage.showAndWait(); // wait until window closes
     }
 
     @FXML
     protected void onEnclosureDeleteButtonClick(ActionEvent event) {
-
+        Animal selected = animalListView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            enclosure.removeAnimal(selected);
+        }
     }
 
     @FXML
     protected void onEnclosureBackButtonClick(ActionEvent event) {
-        // Close the current window (modal) using any control on this scene
         Stage stage = (Stage) enclosureBackButton.getScene().getWindow();
         stage.close();
     }
-
 }

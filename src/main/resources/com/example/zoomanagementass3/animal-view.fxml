@@ -9,44 +9,52 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="349.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="349.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zoomanagementass3.Controllers.AnimalViewController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
+      <VBox alignment="TOP_RIGHT" prefHeight="330.0" prefWidth="110.0" spacing="40.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animal Type:">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animal Type:">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animal Name:">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TAnimal Age: ">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animal Age: ">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
          </children>
          <HBox.margin>
-            <Insets left="30.0" top="70.0" />
+            <Insets left="30.0" right="10.0" top="70.0" />
          </HBox.margin>
       </VBox>
-      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="146.0" spacing="40.0">
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="146.0">
          <children>
-            <ChoiceBox prefWidth="150.0" />
-            <TextField />
-            <TextField />
+            <ChoiceBox fx:id="animalTypeChoice" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin></ChoiceBox>
+            <TextField fx:id="animalNameField">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin></TextField>
+            <TextField fx:id="animalAgeField">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin></TextField>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Button">
+                  <Button fx:id="saveButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Save" onAction="#onSave">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Button" />
+                  <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="32.0" prefWidth="54.0" text="Cancel" onAction="#onCancel"/>
                </children>
             </HBox>
          </children>
