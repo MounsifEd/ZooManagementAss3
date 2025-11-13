@@ -1,6 +1,6 @@
 package com.example.zoomanagementass3.Model;
 
-<<<<<<< HEAD
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -37,9 +37,5 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
         return aName;
     }
 
-=======
-public class CompositeEnclosureCollection {
-    public void addCollection(Enclosure tigerHabitat) {
-    }
->>>>>>> 8a1bc0524429240cab2ec2e08954c837592b1eff
 }
+
