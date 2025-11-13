@@ -10,9 +10,9 @@ import java.io.IOException;
 public class ZooApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("composite-animal-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.setTitle("Zoo Management");
+        FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("enclosure-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 458);
+        stage.setTitle("Big Cats");
         stage.setScene(scene);
         stage.show();
     }

@@ -6,13 +6,13 @@ import javafx.collections.ObservableList;
 import java.util.Objects;
 import java.util.Optional;
 
+public class Enclosure implements  EnclosureCollection {
 /**
  * Represents a leaf enclosure containing animals.
  * Provides CRUD style operations on its animal collection.
  *
  * @author Ian
  */
-public class Enclosure {
     private final String name;
     private final ObservableList<Animal> animals = FXCollections.observableArrayList();
 
@@ -54,5 +54,10 @@ public class Enclosure {
     @Override
     public String toString() {
         return name;
+    }
+    
+    @Override
+    public void addCollection(EnclosureCollection collection) {
+
     }
 }
