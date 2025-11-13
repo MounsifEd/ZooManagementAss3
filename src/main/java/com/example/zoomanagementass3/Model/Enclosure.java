@@ -27,6 +27,11 @@ public class Enclosure implements  EnclosureCollection {
         return name;
     }
 
+    @Override
+    public boolean isaComposite() {
+        return false;
+    }
+
     public ObservableList<Animal> getAnimals() {
         return animals;
     }
@@ -59,5 +64,10 @@ public class Enclosure implements  EnclosureCollection {
     @Override
     public void addCollection(EnclosureCollection collection) {
 
+    }
+
+    @Override
+    public ObservableList<EnclosureCollection> getCollections() {
+        return null;
     }
 }
