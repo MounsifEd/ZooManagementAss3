@@ -12,19 +12,32 @@ import javafx.collections.ObservableList;
 public class CompositeEnclosureCollection implements EnclosureCollection {
 
     private final String aName;
-    private final ObservableList<EnclosureCollection> aComponent = FXCollections.observableArrayList();
-
-    public CompositeEnclosureCollection(String pName) {
-        this.aName = pName;
-    }
+    private final ObservableList<EnclosureCollection> aComponent;
 
     @Override
     public void addCollection(EnclosureCollection collection) {
         aComponent.add(collection);
     }
 
+    private final ObservableList<EnclosureCollection> aCollection;
+
+    public CompositeEnclosureCollection(String pName) {
+        this.aCollection = FXCollections.observableArrayList();
+        this.aName = pName;
+    }
+
+    public void addCollection(EnclosureCollection collection) {
+        aCollection.add(collection);
+    }
+
+    @Override
     public ObservableList<EnclosureCollection> getaComponent() {
         return aComponent;
+    }
+
+    @Override
+    public boolean CompositeEnclosure() {
+        return true;
     }
 
     @Override
