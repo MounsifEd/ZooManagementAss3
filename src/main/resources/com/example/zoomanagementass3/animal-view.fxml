@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="349.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zoomanagementass3.Controllers.AnimalViewController">
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<!--
+        Author: Mounsif
+-->
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="349.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zoomanagementass3.Controllers.AnimalViewController">
    <children>
       <VBox alignment="TOP_RIGHT" prefHeight="330.0" prefWidth="110.0" spacing="40.0">
          <children>
@@ -35,26 +33,26 @@
       </VBox>
       <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="146.0">
          <children>
-            <ChoiceBox fx:id="animalTypeChoice" prefWidth="150.0">
+            <ChoiceBox fx:id="animalTypeChoiceBox" prefWidth="150.0">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin></ChoiceBox>
-            <TextField fx:id="animalNameField">
+            <TextField fx:id="nameTextField">
                <VBox.margin>
                   <Insets bottom="40.0" />
                </VBox.margin></TextField>
-            <TextField fx:id="animalAgeField">
+            <TextField fx:id="ageTextField">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin></TextField>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="saveButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Save" onAction="#onSave">
+                  <Button fx:id="saveAnimalButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Save" onAction="#onSaveButtonClick">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="32.0" prefWidth="54.0" text="Cancel" onAction="#onCancel"/>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="32.0" prefWidth="54.0" text="Cancel" onAction="#onCancelButtonClick"/>
                </children>
             </HBox>
          </children>

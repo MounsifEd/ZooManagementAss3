@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import java.util.Objects;
 import java.util.Optional;
 
-public class Enclosure {
+public class Enclosure implements  EnclosureCollection {
     private final String name;
     private final ObservableList<Animal> animals = FXCollections.observableArrayList();
 
@@ -48,5 +48,10 @@ public class Enclosure {
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public void addCollection(EnclosureCollection collection) {
+
     }
 }
