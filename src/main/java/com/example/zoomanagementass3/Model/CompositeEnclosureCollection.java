@@ -1,40 +1,31 @@
 package com.example.zoomanagementass3.Model;
 
-
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- * Class that contains enclosures.
- * The composite Class in the Composite Pattern
- * @author Mounsif
+ * Composite node representing a collection of enclosures.
+ * @author Nelly
  */
 public class CompositeEnclosureCollection implements EnclosureCollection {
 
-    private final String Name;
-    private ObservableList<EnclosureCollection> collections;
+    private final String compositeName;
+    private final ObservableList<EnclosureCollection> children = FXCollections.observableArrayList();
 
-    public CompositeEnclosureCollection(String Name, ObservableList<EnclosureCollection> collections) {
-        this.Name = Name;
-        this.collections = collections;
+    public CompositeEnclosureCollection(String name) {
+        this.compositeName = name;
     }
-
-    public CompositeEnclosureCollection(String bigCats, String name) {
-        Name = name;
-    }
-
-    public CompositeEnclosureCollection(String bigCats) {
-        Name = bigCats;
-    }
-
 
     @Override
     public void addCollection(EnclosureCollection collection) {
-        this.collections.add(collection);
+        if (collection != null) {
+            children.add(collection);
+        }
     }
 
     @Override
     public ObservableList<EnclosureCollection> getCollections() {
-        return this.collections;
+        return children;
     }
 
     @Override
@@ -44,8 +35,11 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
 
     @Override
     public String getName() {
-        return "";
+        return compositeName;
     }
 
+    @Override
+    public String toString() {
+        return compositeName;
+    }
 }
-
