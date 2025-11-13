@@ -59,20 +59,17 @@ import javafx.stage.Stage;
     public class CompositeEnclosureCollectionViewController {
 
         @FXML
-
-        @FXML
         private ListView<EnclosureCollection> bigCatsListView;
 
-        private  CompositeEnclosureCollection originalCollection;
         private ObservableList<EnclosureCollection> bigCatsList;
 
         @FXML
         private void initialize() {
+            // Load the bigCats view from importHelper
+            CompositeEnclosureCollection rootCollection = ImportHelper.createAnimals();
 
-            originalCollection = ImportHelper.createAnimals();
-
-            aCollection = FXCollections.observableArrayList(originalCollection.getClass());
-            bigCatsListView.setItems(aCollection);
+            bigCatsList = FXCollections.observableArrayList(rootCollection.getCollections());
+            bigCatsListView.setItems(bigCatsList);
         }
 
 
@@ -110,7 +107,7 @@ import javafx.stage.Stage;
 
             // Fill ListView
 
-            bigCatsListView.setItems(rootArea.getaComponent());
+             // bigCatsListView.setItems(rootArea.getaComponent());
 
             // Double-click to open an enclosure
 

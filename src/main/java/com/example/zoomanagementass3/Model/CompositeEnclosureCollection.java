@@ -1,7 +1,6 @@
 package com.example.zoomanagementass3.Model;
 
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
@@ -11,43 +10,41 @@ import javafx.collections.ObservableList;
  */
 public class CompositeEnclosureCollection implements EnclosureCollection {
 
-    private final String aName;
-    private final ObservableList<EnclosureCollection> aComponent;
+    private final String Name;
+    private ObservableList<EnclosureCollection> collections;
+
+    public CompositeEnclosureCollection(String Name, ObservableList<EnclosureCollection> collections) {
+        this.Name = Name;
+        this.collections = collections;
+    }
+
+    public CompositeEnclosureCollection(String bigCats, String name) {
+        Name = name;
+    }
+
+    public CompositeEnclosureCollection(String bigCats) {
+        Name = bigCats;
+    }
+
 
     @Override
     public void addCollection(EnclosureCollection collection) {
-        aComponent.add(collection);
-    }
-
-    private final ObservableList<EnclosureCollection> aCollection;
-
-    public CompositeEnclosureCollection(String pName) {
-        this.aCollection = FXCollections.observableArrayList();
-        this.aName = pName;
-    }
-
-    public void addCollection(EnclosureCollection collection) {
-        aCollection.add(collection);
+        this.collections.add(collection);
     }
 
     @Override
-    public ObservableList<EnclosureCollection> getaComponent() {
-        return aComponent;
+    public ObservableList<EnclosureCollection> getCollections() {
+        return this.collections;
     }
 
     @Override
-    public boolean CompositeEnclosure() {
+    public boolean isaComposite() {
         return true;
     }
 
     @Override
     public String getName() {
-        return aName;
-    }
-
-    @Override
-    public String toString() {
-        return aName;
+        return "";
     }
 
 }
