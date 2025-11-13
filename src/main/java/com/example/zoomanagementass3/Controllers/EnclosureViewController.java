@@ -73,6 +73,13 @@ public class EnclosureViewController {
         stage.initModality(Modality.WINDOW_MODAL);
         stage.initOwner(((Node) event.getSource()).getScene().getWindow());
         stage.showAndWait(); // wait until window closes
+
+        // After the dialog closes, retrieve the created animal
+        AnimalViewController animalCtrl = loader.getController();
+        Animal created = animalCtrl.getCreatedAnimal();
+        if (created != null) {
+            enclosure.addAnimal(created); // ListView updates automatically
+        }
     }
 
     @FXML

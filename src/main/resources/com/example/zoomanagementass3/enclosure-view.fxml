@@ -11,7 +11,7 @@
    <children>
       <Button fx:id="enclosureAddButton" onAction="#onEnclosureAddButtonClick" layoutX="181.0" layoutY="313.0" mnemonicParsing="false" text="Add" />
    <Button fx:id="enclosureDeleteButton" onAction="#onEnclosureDeleteButtonClick" layoutX="281.0" layoutY="313.0" mnemonicParsing="false" text="Delete" />
-      <Label fx:id="enclosureLabel" layoutX="193.0" layoutY="38.0" text="Label" />
+      <Label fx:id="enclosureLabel" layoutX="193.0" layoutY="38.0" text="Enclosure" />
    <ListView fx:id="animalListView" layoutX="107.0" layoutY="81.0" prefHeight="200.0" prefWidth="200.0" />
    <Button fx:id="enclosureBackButton" onAction="#onEnclosureBackButtonClick" layoutX="29.0" layoutY="34.0" mnemonicParsing="false" text="Back" />
    </children>
